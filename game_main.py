@@ -1,12 +1,13 @@
 # ----------- setup ----------- #
 import pygame
 import random
+from game_classes import *
+
 pygame.init()
+
 WIDTH=550
 HEIGHT=800
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-
-from game_classes import *
 
 # ----------- fonts/sounds ----------- #
 font1 = pygame.font.SysFont("comicsansms",30)
@@ -109,7 +110,7 @@ pygame.mixer.music.play(loops=-1)
 replay = True
 while replay:
     garbage_objects = []
-    for i in range(0, 20):  # need to make constantly generating until game over
+    for i in range(0, 20):
         garbage_objects.append(Garbage(random.randint(0, WIDTH), random.randint(-2000, -5), random.uniform(0.1, 0.5),
                                        random.choice(recyclable_garbage_pictures),0))
         garbage_objects.append(Garbage(random.randint(0, WIDTH), random.randint(-2000, -5), random.uniform(0.1, 0.5),
@@ -135,7 +136,6 @@ while replay:
                 pressed = True
                 click.play()
                 (cursorX, cursorY) = pygame.mouse.get_pos()
-                # if pressed, takes the user to the instruction screen
                 if pressed == True and cursorX > 25 and cursorX < 515 and cursorY > 200 and cursorY < 270:
                     instructions = True
                 if pressed == True and cursorX > 140 and cursorX < 395 and cursorY > 305 and cursorY < 375:
