@@ -1,16 +1,17 @@
 import pygame
 
-#sounds
+# ------------- sounds -------------- #
 buzz = pygame.mixer.Sound('sound_buzz.wav')
 ding = pygame.mixer.Sound('sound_ding.wav')
 
+# ------------- pictures -------------- #
 # bins
 blue_bin_pic=pygame.image.load("bin1.png")
 blue_bin_pic=pygame.transform.scale(blue_bin_pic,(90,130))
 green_bin_pic=pygame.image.load("bin2.png")
 green_bin_pic=pygame.transform.scale(green_bin_pic,(90,130))
 
-# recyclable
+# recyclable items
 cardboard=pygame.image.load("recycle_cardboard.png")
 cardboard=pygame.transform.scale(cardboard,(55,40))
 can=pygame.image.load("recycle_can.png")
@@ -24,8 +25,7 @@ paper=pygame.transform.scale(paper,(25,25))
 water=pygame.image.load("recycle_water.png")
 water=pygame.transform.scale(water,(20,40))
 
-
-# compost
+# compost items
 apple=pygame.image.load("compost_apple.png")
 apple=pygame.transform.scale(apple,(27,39))
 banana=pygame.image.load("compost_banana.png")
@@ -42,7 +42,7 @@ watermelon=pygame.transform.scale(watermelon,(54,23))
 recyclable_garbage_pictures = [cardboard,can,egg_carton,newspaper,paper,water]
 compost_garbage_pictures = [apple,banana,chicken,egg_shell,tea,watermelon]
 
-# ----------- classes ----------- #
+# ----------- object class ----------- #
 class Garbage(object):
     def __init__(self,x,y, speed, image, score):
         self.x=x
